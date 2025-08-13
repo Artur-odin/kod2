@@ -1,0 +1,18 @@
+from tkinter import *
+
+def change():
+    metka["text"] = "Черная метка"
+    metka["bg"] = "black"
+
+window = Tk()#создаем главное окно
+metka = Label(text="Привет!", bg="yellow", fg="green", width=15, height=5)
+#создаем метку на желтом фоне (аргумент bg - background)
+#и цвет текста (аргумент fg - foreground)
+#задаем ширин (аргумент width)
+#задаем длину (аргумент height)
+metka.pack()#размещаем метку на главном окне
+
+knopka = Button(text="Изменить метку", width=15, height=3)#создаем кнопку
+knopka.config(command=change)#привязываем функцию change к кнопке
+knopka.pack()
+window.mainloop()#запускаем главное окно

@@ -1,0 +1,20 @@
+from tkinter import *
+
+window = Tk()
+frames = {}
+ents = {}
+labels = ["имя", "фамилию", "отчество"]
+
+for i in range(1, 4):
+    frames[i] = Frame(window)
+    frames[i].pack()
+    
+    Label(frames[i], text=f"Введите {labels[i-1]}").pack()
+    
+    ents[i] = Entry(frames[i], width=20)
+    ents[i].pack()
+    
+    Button(frames[i], text="Ввести", 
+           command=lambda idx=i: (print(ents[idx].get()), ents[idx].delete(0, END))).pack()
+
+window.mainloop()

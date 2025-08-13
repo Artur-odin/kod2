@@ -1,0 +1,20 @@
+import csv
+#https://cloud.mail.ru/public/WtQx/WkYUhVLt7
+
+"""
+Создайте программу на Python, которая подсчитает сколько строк содержит название фирмы NEC, сколько SHARP и сколько SONY.
+Protocol=NEC Address=0x2 Command=0x34 Raw-Data=0xCB34FD02 32 bits LSB first
+Protocol=NEC Address=0x102 Command=0x34 Raw-Data=0xCB340102 32 bits LSB first
+Protocol=NEC Address=0x80 Command=0x45 Raw-Data=0xBA457F80 32 bits LSB first
+
+Результат должен быть выведен в консоль в следующем виде:
+
+
+with open("Demo.log", "rt", encoding="utf-8") as file:
+  [print(u) for u in json.load(file)]
+"""
+
+dictt = dict()
+with open("Demo.log", "rt", encoding="utf-8") as file:
+    {dictt.setdefault(i[0][9:], []).extend("a") for i in csv.reader(file, delimiter=" ")}
+    [print(f"{key} = {len(value)}") for key, value in dictt.items()]

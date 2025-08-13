@@ -1,0 +1,11 @@
+def sum_list(lst):
+    summ = 0
+    for x in lst:
+        if type(x) == int:
+            summ += x
+        else:
+            summ += sum_list(x)
+    return summ
+
+lst = [1, 2, 3, [1, [1, 2, 5], 1, 1, 1], 2, 3, 5]
+print(sum_list(lst))

@@ -1,0 +1,30 @@
+import turtle
+turtle.colormode(255)
+
+scale = 50 #можно менять масштаб
+size = scale  # единый размер для всех фигур
+spacing = scale * 1.5  # одинаковое расстояние между фигурами
+
+rectangle = [[90, 90, 90, 90], [size, size, size, size], (245, 122, 31)]
+rhomb = [[45, 135, 45, 135], [size, size, size, size], (245, 41, 22)]
+trapezoid = [[135, 45, 135, 45], [size, size * 0.7, size, size * 0.7], (245, 188, 42)]
+figure = [rectangle, rhomb, trapezoid]
+
+turtle.penup()
+turtle.goto(-spacing, 0)  # начальная позиция
+
+for mode in figure:
+    turtle.color(mode[2])
+    turtle.pendown()
+    turtle.begin_fill()
+    
+    for j in range(len(mode[0])):
+        turtle.left(mode[0][j])
+        turtle.forward(mode[1][j])
+    
+    turtle.end_fill()
+    turtle.penup()
+    turtle.setheading(0)
+    turtle.forward(spacing)  # переход к следующей позиции
+
+    turtle.pendown()

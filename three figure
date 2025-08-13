@@ -1,0 +1,28 @@
+import turtle
+turtle.colormode(255)
+
+scale = 50
+size = scale
+spacing = scale * 2
+
+rectangle = [[90, 90, 90, 90], [size, size, size, size], (245, 122, 31)]
+rhomb = [[60, 120, 60, 120], [size, size, size, size], (245, 41, 22)]
+trapezoid = [[90, 45, 90, 135], [size, size * 0.7, size, size * 0.7], (245, 188, 42)]
+figure = [rectangle, rhomb, trapezoid]
+
+turtle.penup()
+turtle.goto(-spacing, 0)
+
+for mode in figure:
+    turtle.color(mode[2])
+    turtle.pendown()
+    turtle.begin_fill()
+    
+    for j in range(4):
+        turtle.left(mode[0][j])
+        turtle.forward(mode[1][j])
+    
+    turtle.end_fill()
+    turtle.penup()
+    turtle.setheading(0)
+    turtle.forward(spacing)

@@ -1,0 +1,14 @@
+import pickle
+
+def filter_dump(filename, objects, typename):
+
+    data = [i for i in objects if type(i) == typename]
+
+    with open(filename, mode="wb") as file:
+        pickle.dump(data, file)
+
+filter_dump("z.pkl", [2, 1, "strr"], str)
+
+
+with open("z.pkl", mode="rb") as file:
+    print(pickle.load(file))

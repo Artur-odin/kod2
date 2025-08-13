@@ -1,0 +1,16 @@
+import turtle
+
+scale = 100 #число можно заменить на int(input())
+colors = [(245, 242, 98), (245, 204, 88), (73, 245, 24)]
+fixed_distance = 50  # постоянное расстояние между фигурами
+turtle.hideturtle()
+turtle.colormode(255)
+
+for i in range(3):
+    turtle.color(colors[i])
+    turtle.begin_fill()
+    turtle.circle(scale)
+    turtle.end_fill()
+    turtle.penup()
+    turtle.forward(scale * 2 + fixed_distance)
+    turtle.pendown()

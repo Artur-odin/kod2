@@ -1,14 +1,17 @@
 from tkinter import *
 
-def read1():
+"""
+def read():#без ф-ии тоже работает!
     name = e1.get()
-    print(f"Имя: {name}")
+    print(name)
     e1.delete(0, END)
 
-def read2():
-    city = e2.get()
-    print(f"Город: {city}")
-    e2.delete(0, END)
+def read():#без ф-ии тоже работает!
+    name = e2.get()
+    print()
+    e2.delete(0, END)    
+
+"""
 
 window = Tk()
 
@@ -17,13 +20,12 @@ frame2 = Frame(window)
 frame1.pack()
 frame2.pack()
 
-
 m1 = Label(frame1, text="Введите имя: ", bg="gray", fg="white", font="courier 18 bold")
 m1.pack(side=LEFT)
 e1 = Entry(frame1, width=50, bg="gray", fg="white", font="courier 18 bold")#
 e1.pack(side=LEFT)
 b1 = Button(frame1, text="Ввод", bg="gray", fg="white", font="courier 18 bold",
-           command=read1)
+           command=read)
 b1.pack(side=LEFT)
 
 m2 = Label(frame2, text="Введите город: ", bg="gray", fg="white", font="courier 18 bold")
@@ -31,7 +33,7 @@ m2.pack(side=LEFT)
 e2 = Entry(frame2, width=50, bg="gray", fg="white", font="courier 18 bold")#
 e2.pack(side=LEFT)
 b2 = Button(frame2, text="Ввод", bg="gray", fg="white", font="courier 18 bold",
-           command=read2)
+           command=read)
 b2.pack(side=LEFT)
 
 window.mainloop()

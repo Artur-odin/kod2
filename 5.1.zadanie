@@ -5,7 +5,12 @@ frames = {}
 ents = {}
 labels = ["имя", "фамилию", "отчество"]
 
-for i in range(1, 4):
+for i in range(1, 3 + 1):
+
+    def read():
+        print(ents[i].get())
+        ents[i].delete(0, END)
+
     frames[i] = Frame(window)
     frames[i].pack()
     
@@ -14,7 +19,7 @@ for i in range(1, 4):
     ents[i] = Entry(frames[i], width=20)
     ents[i].pack()
     
-    Button(frames[i], text="Ввести", 
-           command=lambda idx=i: (print(ents[idx].get()), ents[idx].delete(0, END))).pack()
+    Button(frames[i], text="Ввести", command=read).pack()
+
 
 window.mainloop()

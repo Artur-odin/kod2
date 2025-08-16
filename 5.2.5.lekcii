@@ -1,0 +1,14 @@
+from tkinter import *
+
+window = Tk()
+window.title("Главное окно")
+w = window.winfo_screenwidth()
+h = window.winfo_screenheight()
+print(f"Размер вашего экрана {w} на {h} пикселей")
+w2 = w // 2
+h2 = h // 2
+window.geometry(f"400x300+{w2 - 200}+{h2 - 150}")
+
+
+
+window.mainloop()

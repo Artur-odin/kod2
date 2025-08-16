@@ -1,0 +1,9 @@
+from tkinter import *
+
+window = Tk()
+window.title("Главное окно")
+window.geometry("800x500+100+150")
+w = window.winfo_screenwidght()
+h = window.winfo_sreenwidght()
+print(f"Размер вашего экрана {w} на {h} пикселей")
+window.mainloop()

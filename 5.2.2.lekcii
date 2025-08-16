@@ -1,0 +1,30 @@
+#message_box - окно сообщений
+from tkinter import *
+from tkinter import messagebox as mb
+import random
+
+def check():#askyesno() или askokcancel() или askretrycancel()
+    s = e.get()
+    s = int(s)
+    rnd = random.randint(1, 2)
+    if s == rnd:
+        mb.showinfo(title="Результат", message="Угадал")
+    else:
+        mb.showinfo(title="Результат", message="Неудача...")
+    answer = mb.askretrycancel(title="Вопрос", message="Загадать ещё?")
+    if answer:
+        e.delete(0, END)
+    else:
+        window.destroy()
+
+
+window = Tk()
+window.title("Игра 'Угадай число'")
+ml = Label(text="Введите число и нажмите на кнопку.")
+e = Entry()
+e.pack()
+b = Button(text="Передать?", command=check)
+b.pack()
+m = Label(width=40, height=3)
+m.pack()
+window.mainloop()
